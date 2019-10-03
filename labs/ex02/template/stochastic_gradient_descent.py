@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Stochastic Gradient Descent"""
+import numpy as np
 from helpers import batch_iter
 
 def compute_stoch_gradient(y, tx, w):

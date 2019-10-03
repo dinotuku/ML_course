@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Gradient Descent"""
 
+import numpy as np
+
 def compute_gradient(y, tx, w):
     """Compute the gradient."""
     e = y - np.dot(tx, w)
