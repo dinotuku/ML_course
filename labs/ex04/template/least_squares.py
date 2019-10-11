@@ -8,10 +8,9 @@ import numpy as np
 
 
 def least_squares(y, tx):
-    """calculate the least squares."""
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # least squares: TODO
-    # returns mse, and optimal weights
-    # ***************************************************
-    raise NotImplementedError
+    """calculate the least squares solution."""
+    lt = np.dot(tx.T, tx)
+    rt = np.dot(tx.T, y)
+    # solve seems to work better than inv?
+    opt_weights = np.linalg.solve(lt, rt)
+    return opt_weights
