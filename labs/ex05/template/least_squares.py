@@ -9,9 +9,9 @@ import numpy as np
 
 def least_squares(y, tx):
     """calculate the least squares."""
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # least squares: TODO
-    # returns mse, and optimal weights
-    # ***************************************************
-    raise NotImplementedError
+    lt = np.dot(tx.T, tx)
+    rt = np.dot(tx.T, y)
+    w = np.linalg.solve(lt, rt)
+    e = y - tx.dot(w)
+    mse = e.dot(e.T) / (2 * len(e))
+    return mse, w
